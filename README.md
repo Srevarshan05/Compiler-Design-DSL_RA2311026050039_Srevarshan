@@ -192,6 +192,19 @@ Expected errors:
 
 ---
 
+## 📸 Screenshots
+
+### 1. Valid Input Compilation (input1.txt)
+![Input 1 Output](./input1.png)
+
+### 2. Semantic Error Handling (input2.txt)
+![Input 2 Output](./input2_cd.png)
+
+### 3. Intermediate Code Generation (TAC)
+![Intermediate Code](./Intermediate_code.png)
+
+---
+
 ## 👤 Author Details
 
 | Field | Value |
