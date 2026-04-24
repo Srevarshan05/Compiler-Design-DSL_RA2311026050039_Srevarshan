@@ -1,0 +1,68 @@
+============================================================
+  Mini DSL Compiler
+  Author: Srevarshan (RA2311026050039)
+============================================================
+
+----- Phase 1: Lexical Analysis & Parsing -----
+[TOKEN] KEYWORD : int
+[TOKEN] IDENT   : a
+[TOKEN] OP      : =
+[TOKEN] NUMBER  : 5
+[TOKEN] PUNC    : ;
+[TOKEN] KEYWORD : int
+[TOKEN] IDENT   : b
+[TOKEN] OP      : =
+[TOKEN] NUMBER  : 10
+[TOKEN] PUNC    : ;
+[TOKEN] KEYWORD : int
+[TOKEN] IDENT   : c
+[TOKEN] OP      : =
+[TOKEN] IDENT   : a
+[TOKEN] OP      : +
+[TOKEN] IDENT   : b
+[TOKEN] PUNC    : ;
+[TOKEN] KEYWORD : print
+[TOKEN] PUNC    : (
+[TOKEN] IDENT   : c
+[TOKEN] PUNC    : )
+[TOKEN] PUNC    : ;
+
+[PARSER] Parsing completed successfully.
+
+----- Phase 2: Abstract Syntax Tree -----
+[PROGRAM]
+  [DECL] int a =
+    [NUM] 5
+  [DECL] int b =
+    [NUM] 10
+  [DECL] int c =
+    [BINOP] '+'
+      [VAR] a
+      [VAR] b
+  [PRINT]
+    [VAR] c
+
+----- Phase 3: Semantic Analysis -----
+[SEMANTIC] No errors found. Program is valid.
+
+===== Symbol Table =====
+Variable             Value      Initialized
+--------------------------------------------
+a                    0          no
+b                    0          no
+c                    0          no
+========================================
+
+----- Phase 4: Intermediate Code Generation -----
+
+===== Three-Address Code (TAC) =====
+  a = 5
+  b = 10
+  t0 = a + b
+  c = t0
+  print c
+=====================================
+
+============================================================
+  Compilation finished successfully.
+============================================================

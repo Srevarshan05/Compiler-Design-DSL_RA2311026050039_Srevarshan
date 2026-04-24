@@ -1,0 +1,4 @@
+int x = 3;
+int y = x * 2;
+int x = 9;
+print(z);
